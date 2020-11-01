@@ -29,8 +29,9 @@ def red_wine_quality(method='km'):
         create_start = time.process_time()
 
         # Randomized Projection
-        c = 3
-        x = GaussianRandomProjection(n_components=c).fit_transform(x)
+        c = 2
+        for i in range(1000):
+            x = GaussianRandomProjection(n_components=c).fit_transform(x)
 
         test_train_start = time.process_time()
 
@@ -68,8 +69,9 @@ def red_wine_quality(method='km'):
         create_start = time.process_time()
 
         # Randomized Projection
-        c = 6
-        x = GaussianRandomProjection(n_components=c).fit_transform(x)
+        c = 3
+        for i in range(1000):
+            x = GaussianRandomProjection(n_components=c).fit_transform(x)
 
         test_train_start = time.process_time()
 
@@ -109,7 +111,8 @@ def fish_market(method='km'):
 
         # Randomized Projection
         c = 3
-        x = GaussianRandomProjection(n_components=c).fit_transform(x)
+        for i in range(1000):
+            x = GaussianRandomProjection(n_components=c).fit_transform(x)
 
         test_train_start = time.process_time()
 
@@ -120,7 +123,7 @@ def fish_market(method='km'):
         test_train_time = time.process_time() - test_train_start
 
         # K-Means
-        k = 2
+        k = 3
         kmeans = KMeans(n_clusters=k).fit(x_train)
 
         run_time = time.process_time() - create_start - test_train_time
@@ -144,8 +147,9 @@ def fish_market(method='km'):
         create_start = time.process_time()
 
         # Randomized Projection
-        c = 2
-        x = GaussianRandomProjection(n_components=c).fit_transform(x)
+        c = 6
+        for i in range(1000):
+            x = GaussianRandomProjection(n_components=c).fit_transform(x)
 
         test_train_start = time.process_time()
 
@@ -156,7 +160,7 @@ def fish_market(method='km'):
         test_train_time = time.process_time() - test_train_start
 
         # EM
-        k = 2
+        k = 3
         em = GaussianMixture(n_components=k).fit(x_train)
 
         run_time = time.process_time() - create_start - test_train_time

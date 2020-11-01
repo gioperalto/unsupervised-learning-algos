@@ -29,7 +29,7 @@ def red_wine_quality(method='km'):
         create_start = time.process_time()
 
         # Randomized Projection
-        c = 2
+        c = 7
         for i in range(1000):
             x = GaussianRandomProjection(n_components=c).fit_transform(x)
 
